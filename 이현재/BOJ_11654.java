@@ -25,7 +25,7 @@ public class BOJ_11654 {
      */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println((int)br.readLine().charAt(0));
+        System.out.println((int)br.readLine().charAt(0)); // char type 을 int 형 변환하면 아스키 코드 값을 얻을 수 있다.
     }
 
     /**
@@ -34,7 +34,7 @@ public class BOJ_11654 {
      * @throws IOException IOException
      */
     public static void other(String[] args) throws IOException {
-        int ch = System.in.read();
+        int ch = System.in.read(); // byte 값을 int형으로 반환 받는다. 문자형은 아스키 코드 값을 반환한다.
         System.out.println(ch);
     }
 }

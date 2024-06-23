@@ -26,7 +26,7 @@ public class BOJ_11720 {
      */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        br.readLine();
+        br.readLine(); // 둘째 줄에 입력되는 숫자 N개를 char 배열로 할당 받기 때문에 첫째 줄에 입력 되는 숫자의 개수는 배열의 길이와 같아서 활용 하지 않는다.
         char[] str = br.readLine().toCharArray();
         int result = 0;
         for (char c : str) {
@@ -46,7 +46,7 @@ public class BOJ_11720 {
         String str = br.readLine();
         int ans = 0;
         for(int i = 0; i < N; i++) {
-            ans += str.charAt(i) - '0';
+            ans += str.charAt(i) - '0'; // 문자 '0'의 아스키 코드 값은 48, '1'(49) - '0'(48) -> 1 숫자형 변환
         }
         System.out.println(ans);
     }
