@@ -1,19 +1,22 @@
 package 이현재;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class test {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        br.readLine();
-        char[] str = br.readLine().toCharArray();
-        int result = 0;
-        for (char c : str) {
-            result += Integer.parseInt(String.valueOf(c));
+        int t = Integer.parseInt(br.readLine());
+        for (int i = 0; i < t; i++) {
+            String[] line = br.readLine().split(" ");
+            int r = Integer.parseInt(line[0]);
+            char[] s = line[1].toCharArray();
+            for (char c : s) {
+                for (int o = 0; o < r; o++) {
+                    System.out.print(c);
+                }
+            }
+            System.out.println();
         }
-        System.out.println(result);
     }
 }
