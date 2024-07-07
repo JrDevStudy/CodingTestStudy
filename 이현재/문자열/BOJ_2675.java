@@ -1,4 +1,4 @@
-package 이현재;
+package 이현재.문자열;
 
 import java.io.*;
 import java.util.StringTokenizer;
