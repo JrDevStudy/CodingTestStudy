@@ -1,4 +1,4 @@
-package 이현재;
+package 이현재.배열1차;
 
 import java.io.*;
 
