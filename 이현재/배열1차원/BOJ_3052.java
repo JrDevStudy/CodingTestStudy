@@ -1,4 +1,4 @@
-package 이현재.배열1차;
+package 이현재.배열1차원;
 
 import java.io.BufferedReader;
 import java.io.IOException;
