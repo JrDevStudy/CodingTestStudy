@@ -3,27 +3,31 @@ package 이현재;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class test {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int max = 0;
-        int row = 1;
-        int col = 1;
-        for (int i = 0;  i < 9; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 9; j++) {
-                int n = Integer.parseInt(st.nextToken());
-                if (n > max) {
-                    max = n;
-                    row = i + 1;
-                    col = j + 1;
-                }
-            }
+        boolean[] arr = new boolean[20_000_001]; // 크기를 20,000,001로 변경하여 인덱스 문제 해결
+        int n = Integer.parseInt(br.readLine());
+        String[] cards = br.readLine().split(" ");
+        int m = Integer.parseInt(br.readLine());
+        String[] numbers = br.readLine().split(" ");
+        StringBuilder sb = new StringBuilder();
+
+        for (String card : cards) {
+            int c = Integer.parseInt(card);
+            if (c < 0) c = Math.abs(c) + 10_000_000;
+            arr[c] = true;
         }
-        System.out.println(max + "\n" + row + " " + col);
+
+        for (String number : numbers) {
+            int no = Integer.parseInt(number);
+            if (no < 0) no = Math.abs(no) + 10_000_000;
+            if (arr[no]) sb.append("1").append(" ");
+            else sb.append("0").append(" ");
+        }
+
+        System.out.println(sb);
     }
 }
