@@ -90,8 +90,8 @@ public class BOJ_1316 {
 
     /**
      * 백준 상위 등수 풀이
-     * 메모리 : 13132 KB
-     * 시간 : 108 ms
+     * 메모리 : 11512 KB
+     * 시간 : 68 ms
      *
      * @throws IOException
      */
