@@ -1,33 +1,38 @@
 package 이현재;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class test {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean[] arr = new boolean[20_000_001]; // 크기를 20,000,001로 변경하여 인덱스 문제 해결
-        int n = Integer.parseInt(br.readLine());
-        String[] cards = br.readLine().split(" ");
-        int m = Integer.parseInt(br.readLine());
-        String[] numbers = br.readLine().split(" ");
-        StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        System.out.println(514229 % 1234567);
+        System.out.println(832040 % 1234567);
+        System.out.println(832040 + 514229);
+        int[] solution = solution();
+        int[] solution01 = solution01();
 
-        for (String card : cards) {
-            int c = Integer.parseInt(card);
-            if (c < 0) c = Math.abs(c) + 10_000_000;
-            arr[c] = true;
+        for (int i = 0; i < solution.length; i++) {
+            System.out.println(i + "번째");
+            System.out.println("solution = " + solution[i] + " solution01 = " + solution01[i]);
         }
+    }
 
-        for (String number : numbers) {
-            int no = Integer.parseInt(number);
-            if (no < 0) no = Math.abs(no) + 10_000_000;
-            if (arr[no]) sb.append("1").append(" ");
-            else sb.append("0").append(" ");
+    public static int[] solution() {
+        int[] fibonacci = new int[32];
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+        for (int i = 2; i < fibonacci.length; i++) {
+            fibonacci[i] = fibonacci[i - 1] % 1234567 + fibonacci[i - 2] % 1234567;
         }
+        return fibonacci;
+    }
 
-        System.out.println(sb);
+    public static int[] solution01() {
+        int[] fibonacci = new int[32];
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+        for (int i = 2; i < fibonacci.length; i++) {
+            fibonacci[i] = (fibonacci[i - 1] + fibonacci[i - 2]) % 1234567;
+        }
+        return fibonacci;
     }
 }
