@@ -94,20 +94,28 @@ public class BOJ_1254 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String N = br.readLine();
-        // a : 입력 받은 문자열을 반으로 나눈 것의 앞부분, b : 입력 받은 문자열을 반으로 나눈 것의 뒷부분
-        String a = N.substring(0, N.length()/2), b = N.substring(N.length()/2, N.length()), c, d;
+        String a = N.substring(0, N.length() / 2);  // 입력 문자열의 첫 절반
+        String b = N.substring(N.length() / 2);  // 입력 문자열의 두 번째 절반
+        String c, d;
+
+        // 두 번째 절반을 순회하며 팰린드롬 검사
         for(int i=0; i<b.length(); i++) {
-            // t : 입력 받은 문자열을 반으로 나눈 것의 앞부분을 반대로 뒤집은 문자열
+            // a의 역순 문자열 t 생성
             String t = new StringBuffer(a).reverse().toString();
-            c=a+t;
-            a+=b.charAt(i);
-            d=a+t;
-            if(c.contains(N)) {
-                System.out.println(c.length());
+            // c는 a + t 형태의 팰린드롬 후보
+            c = a + t;
+            // a에 b의 현재 문자 추가하여 d 생성
+            a += b.charAt(i);
+            d = a + t;
+
+            // c가 N을 포함하는지 검사
+            if (c.contains(N)) {
+                System.out.println(c.length());  // 팰린드롬의 길이 출력
                 break;
             }
-            if(d.contains(N)) {
-                System.out.println(d.length());
+            // d가 N을 포함하는지 검사
+            if (d.contains(N)) {
+                System.out.println(d.length());  // 팰린드롬의 길이 출력
                 break;
             }
 
